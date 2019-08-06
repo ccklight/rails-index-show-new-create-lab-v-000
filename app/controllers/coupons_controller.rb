@@ -7,7 +7,7 @@ class CouponsController < ApplicationController
 
     def show
         #Isolate/find individual coupon by id
-        @coupon = Coupon.find(params[:id]
+        @coupon = Coupon.find(params[:id])
     end 
 
     def new 
@@ -22,7 +22,7 @@ class CouponsController < ApplicationController
         @coupon[:store] = params[:coupon][:store] 
         # Save the instance of the coupon
         @coupon.save
-        #Re-direct user to coupon_path
+        #Re-direct user to show page
         redirect_to coupon_path(@coupon) 
     end
 
